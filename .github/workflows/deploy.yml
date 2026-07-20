@@ -1,0 +1,48 @@
+name: BUILD and DEPLOY Ant vs Fly
+
+on:
+  push:
+    branches: [main]
+
+jobs: 
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+         registry: ghcr.io
+         username: ${{ github.actor }}
+         password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v6
+        with:
+         context: ./antvsfly-frontend
+         push: true
+         tags: |
+            ghcr.io/kingbaran47/antvsfly-frontend:latest
+            ghcr.io/kingbaran47/antvsfly-frontend:${{ github.sha }}
+      - name: Build and push backend image
+        uses: docker/build-push-action@v6
+        with:
+         context: ./antvsfly-backend
+         push: true
+         tags: |
+            ghcr.io/kingbaran47/antvsfly-backend:latest
+            ghcr.io/kingbaran47/antvsfly-backend:${{ github.sha }}
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /home/deploy/antvsfly
+            docker compose pull
+            docker compose up -d
+
