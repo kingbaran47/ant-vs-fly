@@ -66,9 +66,20 @@
 />
 
     <!-- Title -->
-    <h1 class="font-ranchers text-8xl text-white mb-10 drop-shadow-lg">
+    <h1 class="font-ranchers text-8xl text-white mb-2 drop-shadow-lg">
         Ant VS Fly
     </h1>
+    <button 
+        type="button"
+        class="mb-4"
+        (click)="toggleVolume()"
+        >
+        @if (!volumeOn) {
+            <img src="images/volume-xmark-svgrepo-com.svg" alt="Volume" class="w-8 h-8"/>
+        } @else {
+            <img src="images/volume-max-svgrepo-com.svg" alt="Volume" class="w-8 h-8"/>
+        }
+        </button>
 
     <!-- Name input -->
     <div class="mb-6 w-full max-w-sm">

@@ -16,6 +16,7 @@ export class Home implements OnInit, OnDestroy {
   playerName: string = "";
   roomCode: string = "";
   selectedCharacter: string = "";
+  volumeOn: boolean = true;
   private roomCreatedSub?: Subscription;
 
   selectCharacter(character: string) {
@@ -70,8 +71,15 @@ export class Home implements OnInit, OnDestroy {
 
   }
 
-
-
+  toggleVolume() {
+    this.volumeOn = !this.volumeOn;
+    if(this.volumeOn === true) {
+      this.soundService.playBackground();
+    } else {
+      this.soundService.stopBackground();
+    }
+  }
+  
   joinRoom() {
 
     if(!this.playerName || !this.roomCode) return;
