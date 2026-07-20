@@ -1,0 +1,122 @@
+.cyber-btn {
+    transform: skewX(-12deg);
+    position: relative;
+}
+
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid #22d3ee;
+    transition: all 0.3s;
+}
+
+.cyber-btn::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    transition: all 0.3s;
+}
+
+.cyber-btn:hover::before {
+    inset: -3px;
+    box-shadow: 0 0 12px #22d3ee;
+}
+
+.cyber-btn-gold::before {
+    border-color: #eab308;
+}
+
+.cyber-btn-gold::after {
+    border-color: rgba(234, 179, 8, 0.3);
+}
+
+.cyber-btn-gold:hover::before {
+    box-shadow: 0 0 12px #eab308;
+}
+
+@keyframes ashRise {
+    0%   { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0; }
+    10%  { opacity: var(--op, 0.7); }
+    60%  { opacity: calc(var(--op, 0.7) * 0.6); }
+    100% { transform: translate(var(--drift), var(--rise)) rotate(var(--rot, 40deg)) scale(0.4); opacity: 0; }
+}
+
+@keyframes emberGlow {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+    10%  { opacity: 1; }
+    70%  { opacity: 0.6; }
+    100% { transform: translate(var(--drift), var(--rise)) scale(0.2); opacity: 0; }
+}
+
+.ash {
+    position: fixed;
+    width: var(--size, 4px);
+    height: var(--size, 4px);
+    border-radius: var(--br, 50%);
+    background: var(--color, #d1d5db);
+    animation: ashRise var(--dur, 3s) ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ember {
+    position: fixed;
+    width: var(--size, 3px);
+    height: var(--size, 3px);
+    border-radius: 50%;
+    background: var(--color, #f97316);
+    box-shadow: 0 0 5px 2px var(--color, #f97316);
+    animation: emberGlow var(--dur, 2.5s) ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #101010;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.wave-text {
+    display: flex;
+    gap: 1rem;
+}
+
+.wave-text span {
+    display: inline-block;
+    font-size: 4rem;
+    animation: wave 2s ease-in-out infinite;
+    color:white;
+    font-family: 'Ranchers';
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.wave-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+.wave-text span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.wave-text span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.wave-text span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

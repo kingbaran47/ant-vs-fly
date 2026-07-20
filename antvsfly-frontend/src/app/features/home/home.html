@@ -1,0 +1,140 @@
+<main class="relative min-h-screen bg-gray-900 flex flex-col items-center justify-center overflow-hidden px-4">
+
+    <!-- Ameise links -->
+<img
+    src="images/homeant.png"
+    class="absolute bottom-0 h-3/4 pointer-events-none object-cover transition-opacity duration-300"
+    [style.opacity]="selectedCharacter === 'fly' ? '0.15' : selectedCharacter === 'ant' ? '0.9' : '0.4'"
+    style="transform: scaleX(-1); left: -10%;"
+/>
+
+<!-- Asche & Glut — steigt von unten nach oben -->
+
+<!-- Asche -->
+<div class="ash" style="left:3%;  bottom:0; --drift: 20px;  --rise: -110vh; --size: 4px; --color: #9ca3af; --op: 0.6; --dur: 4s;  --rot: 30deg;  animation-delay: 0s;"></div>
+<div class="ash" style="left:8%;  bottom:0; --drift: -15px; --rise: -90vh;  --size: 3px; --color: #d1d5db; --op: 0.5; --dur: 3.5s; --rot: -20deg; animation-delay: 0.4s;"></div>
+<div class="ash" style="left:14%; bottom:0; --drift: 25px;  --rise: -120vh; --size: 5px; --color: #6b7280; --op: 0.7; --dur: 5s;  --rot: 50deg;  animation-delay: 0.8s;"></div>
+<div class="ash" style="left:20%; bottom:0; --drift: -20px; --rise: -100vh; --size: 3px; --color: #e5e7eb; --op: 0.5; --dur: 4.2s; --rot: -40deg; animation-delay: 0.2s;"></div>
+<div class="ash" style="left:26%; bottom:0; --drift: 30px;  --rise: -95vh;  --size: 4px; --color: #9ca3af; --op: 0.6; --dur: 3.8s; --rot: 25deg;  animation-delay: 1.1s;"></div>
+<div class="ash" style="left:32%; bottom:0; --drift: -25px; --rise: -115vh; --size: 3px; --color: #d1d5db; --op: 0.5; --dur: 4.6s; --rot: -35deg; animation-delay: 0.6s;"></div>
+<div class="ash" style="left:38%; bottom:0; --drift: 18px;  --rise: -105vh; --size: 6px; --color: #6b7280; --op: 0.7; --dur: 3.2s; --rot: 45deg;  animation-delay: 1.5s;"></div>
+<div class="ash" style="left:44%; bottom:0; --drift: -30px; --rise: -90vh;  --size: 3px; --color: #e5e7eb; --op: 0.5; --dur: 4.8s; --rot: -15deg; animation-delay: 0.3s;"></div>
+<div class="ash" style="left:50%; bottom:0; --drift: 22px;  --rise: -120vh; --size: 5px; --color: #9ca3af; --op: 0.6; --dur: 3.6s; --rot: 60deg;  animation-delay: 0.9s;"></div>
+<div class="ash" style="left:56%; bottom:0; --drift: -18px; --rise: -100vh; --size: 4px; --color: #d1d5db; --op: 0.6; --dur: 4.4s; --rot: -50deg; animation-delay: 0.1s;"></div>
+<div class="ash" style="left:62%; bottom:0; --drift: 28px;  --rise: -110vh; --size: 3px; --color: #6b7280; --op: 0.5; --dur: 5.2s; --rot: 35deg;  animation-delay: 1.3s;"></div>
+<div class="ash" style="left:68%; bottom:0; --drift: -22px; --rise: -95vh;  --size: 5px; --color: #e5e7eb; --op: 0.7; --dur: 3.4s; --rot: -25deg; animation-delay: 0.7s;"></div>
+<div class="ash" style="left:74%; bottom:0; --drift: 15px;  --rise: -115vh; --size: 4px; --color: #9ca3af; --op: 0.6; --dur: 4s;  --rot: 55deg;  animation-delay: 0.5s;"></div>
+<div class="ash" style="left:80%; bottom:0; --drift: -28px; --rise: -105vh; --size: 3px; --color: #d1d5db; --op: 0.5; --dur: 4.6s; --rot: -45deg; animation-delay: 1.2s;"></div>
+<div class="ash" style="left:86%; bottom:0; --drift: 20px;  --rise: -90vh;  --size: 6px; --color: #6b7280; --op: 0.7; --dur: 3.8s; --rot: 20deg;  animation-delay: 0.35s;"></div>
+<div class="ash" style="left:92%; bottom:0; --drift: -16px; --rise: -120vh; --size: 3px; --color: #e5e7eb; --op: 0.5; --dur: 5s;  --rot: -30deg; animation-delay: 0.85s;"></div>
+
+<!-- Zweite Reihe mit Offset -->
+<div class="ash" style="left:5%;  bottom:0; --drift: -24px; --rise: -100vh; --size: 3px; --color: #9ca3af; --op: 0.4; --dur: 4.3s; --rot: 40deg;  animation-delay: 2s;"></div>
+<div class="ash" style="left:11%; bottom:0; --drift: 18px;  --rise: -115vh; --size: 4px; --color: #d1d5db; --op: 0.5; --dur: 3.7s; --rot: -55deg; animation-delay: 2.4s;"></div>
+<div class="ash" style="left:23%; bottom:0; --drift: -20px; --rise: -95vh;  --size: 3px; --color: #6b7280; --op: 0.4; --dur: 5.1s; --rot: 30deg;  animation-delay: 1.8s;"></div>
+<div class="ash" style="left:35%; bottom:0; --drift: 26px;  --rise: -110vh; --size: 5px; --color: #9ca3af; --op: 0.6; --dur: 4.1s; --rot: -40deg; animation-delay: 2.2s;"></div>
+<div class="ash" style="left:47%; bottom:0; --drift: -19px; --rise: -105vh; --size: 3px; --color: #e5e7eb; --op: 0.4; --dur: 3.3s; --rot: 50deg;  animation-delay: 1.6s;"></div>
+<div class="ash" style="left:59%; bottom:0; --drift: 23px;  --rise: -90vh;  --size: 4px; --color: #d1d5db; --op: 0.5; --dur: 4.7s; --rot: -20deg; animation-delay: 2.6s;"></div>
+<div class="ash" style="left:71%; bottom:0; --drift: -17px; --rise: -120vh; --size: 3px; --color: #9ca3af; --op: 0.4; --dur: 3.9s; --rot: 45deg;  animation-delay: 2.1s;"></div>
+<div class="ash" style="left:83%; bottom:0; --drift: 21px;  --rise: -100vh; --size: 5px; --color: #6b7280; --op: 0.6; --dur: 4.5s; --rot: -35deg; animation-delay: 1.9s;"></div>
+<div class="ash" style="left:95%; bottom:0; --drift: -24px; --rise: -110vh; --size: 3px; --color: #e5e7eb; --op: 0.4; --dur: 5.3s; --rot: 25deg;  animation-delay: 2.3s;"></div>
+
+<!-- Glut (leuchtet orange/rot) -->
+<div class="ember" style="left:6%;  bottom:0; --drift: 18px;  --rise: -80vh;  --size: 4px; --color: #f97316; --dur: 2.8s; animation-delay: 0s;"></div>
+<div class="ember" style="left:17%; bottom:0; --drift: -22px; --rise: -95vh;  --size: 3px; --color: #ef4444; --dur: 3.2s; animation-delay: 0.5s;"></div>
+<div class="ember" style="left:29%; bottom:0; --drift: 15px;  --rise: -70vh;  --size: 5px; --color: #fbbf24; --dur: 2.5s; animation-delay: 1s;"></div>
+<div class="ember" style="left:41%; bottom:0; --drift: -19px; --rise: -85vh;  --size: 3px; --color: #f97316; --dur: 3.5s; animation-delay: 0.3s;"></div>
+<div class="ember" style="left:53%; bottom:0; --drift: 24px;  --rise: -100vh; --size: 4px; --color: #ef4444; --dur: 2.9s; animation-delay: 0.8s;"></div>
+<div class="ember" style="left:65%; bottom:0; --drift: -16px; --rise: -75vh;  --size: 3px; --color: #fbbf24; --dur: 3.3s; animation-delay: 1.4s;"></div>
+<div class="ember" style="left:77%; bottom:0; --drift: 20px;  --rise: -90vh;  --size: 5px; --color: #f97316; --dur: 2.6s; animation-delay: 0.6s;"></div>
+<div class="ember" style="left:89%; bottom:0; --drift: -23px; --rise: -80vh;  --size: 3px; --color: #ef4444; --dur: 3.7s; animation-delay: 1.1s;"></div>
+<div class="ember" style="left:12%; bottom:0; --drift: 17px;  --rise: -95vh;  --size: 4px; --color: #fbbf24; --dur: 2.7s; animation-delay: 1.7s;"></div>
+<div class="ember" style="left:48%; bottom:0; --drift: -21px; --rise: -85vh;  --size: 3px; --color: #f97316; --dur: 3.1s; animation-delay: 2.2s;"></div>
+<div class="ember" style="left:73%; bottom:0; --drift: 14px;  --rise: -70vh;  --size: 5px; --color: #ef4444; --dur: 2.4s; animation-delay: 0.9s;"></div>
+<div class="ember" style="left:91%; bottom:0; --drift: -18px; --rise: -100vh; --size: 3px; --color: #fbbf24; --dur: 3.6s; animation-delay: 1.5s;"></div>
+
+
+
+<!-- Fliege rechts -->
+<img
+    src="images/homefly.png"
+    class="absolute right-0 pointer-events-none object-cover transition-opacity duration-300"
+    [style.opacity]="selectedCharacter === 'ant' ? '0.15' : selectedCharacter === 'fly' ? '0.9' : '0.4'"
+
+
+    style="height: 90%; bottom: -5%;"
+/>
+
+    <!-- Title -->
+    <h1 class="font-ranchers text-8xl text-white mb-10 drop-shadow-lg">
+        Ant VS Fly
+    </h1>
+
+    <!-- Name input -->
+    <div class="mb-6 w-full max-w-sm">
+        <input
+            type="text"
+            [(ngModel)]="playerName"
+            placeholder="Your name..."
+            class="w-full px-6 py-4 rounded-xl text-gray-900 text-lg outline-none focus:ring-2 focus:ring-blue-500"
+        />
+    </div>
+
+    <!-- Character selection -->
+    <p class="text-gray-400 text-sm mb-3 uppercase tracking-widest">Choose your character</p>
+    <div class="flex gap-6 mb-8">
+        <button
+            type="button"
+            (click)="selectCharacter('ant')"
+            [class]="selectedCharacter === 'ant'
+                ? 'flex flex-col items-center p-4 rounded-xl bg-blue-500 scale-110 transition-all'
+                : 'flex flex-col items-center p-4 rounded-xl bg-gray-700 hover:bg-gray-600 transition-all'">
+            <img src="images/ant-svgrepo-com.svg" alt="Ant" class="w-16 h-16"/>
+            <span class="text-white text-sm mt-2">Ant</span>
+        </button>
+
+        <button
+            type="button"
+            (click)="selectCharacter('fly')"
+            [class]="selectedCharacter === 'fly'
+                ? 'flex flex-col items-center p-4 rounded-xl bg-blue-500 scale-110 transition-all'
+                : 'flex flex-col items-center p-4 rounded-xl bg-gray-700 hover:bg-gray-600 transition-all'">
+            <img src="images/fly-svgrepo-com.svg" alt="Fly" class="w-16 h-16"/>
+            <span class="text-white text-sm mt-2">Fly</span>
+        </button>
+    </div>
+
+    <!-- Create Room -->
+    <div class="w-full max-w-sm mb-6">
+        <button
+            type="button"
+            (click)="createRoom()"
+            class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xl font-semibold transition-all">
+            Create Room
+        </button>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex items-center w-full max-w-sm mb-6">
+        <div class="flex-1 h-px bg-gray-600"></div>
+        <span class="text-gray-400 px-4 text-sm uppercase tracking-widest">or</span>
+        <div class="flex-1 h-px bg-gray-600"></div>
+    </div>
+
+    <!-- Join Room -->
+    <div class="w-full max-w-sm flex flex-col gap-3">
+        <input
+            type="text"
+            [(ngModel)]="roomCode"
+            placeholder="Enter room code..."
+            class="w-full px-6 py-4 rounded-xl text-gray-900 text-lg outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+            type="button"
+            (click)="joinRoom()"
+            class="w-full py-4 rounded-xl bg-gray-700 hover:bg-gray-600 text-white text-xl font-semibold transition-all">
+            Join Room
+        </button>
+    </div>
+
+</main>

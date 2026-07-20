@@ -1,0 +1,43 @@
+<main class="min-h-screen bg-gray-900 flex flex-col items-center justify-center relative">
+
+  <div class="confetti" style="left: 10%; --color: red; --delay: 0s;"></div>
+<div class="confetti" style="left: 30%; --color: blue; --delay: 0.1s;"></div>
+<div class="confetti" style="left: 50%; --color: green; --delay: 0.1s;"></div>
+<div class="confetti" style="left: 70%; --color: orange; --delay: 1.5s;"></div>
+<div class="confetti" style="left: 90%; --color: purple; --delay: 3s;"></div>
+
+  <div class="confetti" style="left: 12%; --color: red; --delay: 1.0s;"></div>
+<div class="confetti" style="left: 32%; --color: blue; --delay: 0.8s;"></div>
+<div class="confetti" style="left: 52%; --color: green; --delay: 1s;"></div>
+<div class="confetti" style="left: 72%; --color: orange; --delay: 0.4s;"></div>
+<div class="confetti" style="left: 92%; --color: purple; --delay: 2s;"></div>
+
+  <div class="confetti" style="left: 14%; --color: red; --delay: 2.0s;"></div>
+<div class="confetti" style="left: 34%; --color: blue; --delay: 0.8s;"></div>
+<div class="confetti" style="left: 54%; --color: green; --delay: 1.1s;"></div>
+<div class="confetti" style="left: 74%; --color: orange; --delay: 1.2s;"></div>
+<div class="confetti" style="left: 94%; --color: purple; --delay: 1s;"></div>
+
+
+
+    <img [src]="'images/' + winnerCharacter() + '-winner.png'" class="w-full max-w-2xl object-contain opacity-90">
+
+    <div class="absolute top-8 flex flex-col items-center">
+        <p class="text-gray-400 text-lg uppercase tracking-widest">And the winner is</p>
+        <p class="text-white text-5xl font-bold mt-1">{{winner()}}</p>
+    </div>
+
+    <div class="absolute bottom-8 flex flex-col items-center gap-4">
+        <div class="flex gap-12">
+            <p class="text-white text-2xl">{{playerName()}}: <span class="font-bold">{{myPoints()}}</span></p>
+            <p class="text-white text-2xl">{{opponent()}}: <span class="font-bold">{{oppoPoints()}}</span></p>
+        </div>
+        <button
+            type="button"
+            (click)="goToMenu()"
+            class="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-200 transition-all">
+            Back to Menu
+        </button>
+    </div>
+
+</main>

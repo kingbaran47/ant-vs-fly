@@ -1,0 +1,15 @@
+@keyframes confettiFall {
+    0% {transform: translate(0px) rotate(0deg);}
+    100% {transform: translateY(110vh) rotate(360deg);}
+
+}
+
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    background: var(--color, yellow);
+    animation: confettiFall 6s linear var(--delay, 0s) infinite;
+}

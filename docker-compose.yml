@@ -1,0 +1,21 @@
+services:
+  backend:
+    image: ghcr.io/kingbaran47/antvsfly-backend:latest
+    build:
+      context: ./antvsfly-backend
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      FRONTEND_URL: http://5.231.108.147
+    restart: unless-stopped
+
+  frontend:
+    image: ghcr.io/kingbaran47/antvsfly-frontend:latest
+    build:
+      context: ./antvsfly-frontend
+    ports:
+      - "127.0.0.1:8081:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
